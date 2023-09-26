@@ -1,38 +1,67 @@
-.App {
+/* App.css */
+body {
+  background: linear-gradient(to bottom, #2dd4bf, #042f2e);
+  display: flex;
+  justify-content: space-between;
+}
+
+.player h1{
+  font-size: 40px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Player.css */
+
+/* Styling for player containers (including image and information) */
+.player-container {
+  display: inline-block;
+  /* float: left; */
+  margin: 10px;
+  width: calc(33.33% - 20px); /* One-third of the container width minus margin */
+  text-align: center;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Styling for player images */
+.player-img {
+  width: 100%; /* Adjust as needed */
+  border-radius: 20%;
+  object-fit: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Styling for player information (name, team, etc.) */
+.player-info {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* PlayerList.css */
+
+/* Display players side by side, three in a row */
+.player-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styling for each player item */
+.player-item {
+  width: calc(33.33% - 20px); /* One-third of the container width minus margin */
+  margin: 10px;
+  overflow: hidden;
+  transition: width 1s ease; /* Adjust the duration as needed */
+  cursor: pointer;
+  flex: 0 0 calc(33.33% - 20px); /* One-third of the container width minus margin */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Expanded state for player item */
+.expanded {
+  width: calc(100% - 40px); /* Expand to full width when clicked, accounting for margins */
+}
+
+/* Hover effect for player item */
+.player-item:hover {
+  width: calc(100% - 40px); /* Expand to full width on hover, accounting for margins */
+  transition: width 1s ease; /* Adjust the duration as needed */
 }
